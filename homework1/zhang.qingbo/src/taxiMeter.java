@@ -7,9 +7,13 @@ public class taxiMeter {
     public static final double PRICE_PER_KM = 0.8;
     public static final double PRECISION = 0.001;
     public static final double  BASE_DISTANCE = 8.0;
+    public static final double  LONG_DISTANCE_EXTRA_CHARGE = 0.5;
 
     public double distanceFee(int distance) {
-        if (distance > (FLAG_DISTANCE + PRECISION) ) {
+
+        if (distance > (BASE_DISTANCE + PRECISION)) {
+            return FLAG_PRICE + (8 - FLAG_DISTANCE) * PRICE_PER_KM + (distance - 8) * (PRICE_PER_KM * (1+LONG_DISTANCE_EXTRA_CHARGE) ) ;
+        } else if (distance > (FLAG_DISTANCE + PRECISION) ) {
             return FLAG_PRICE + (distance - FLAG_DISTANCE) * PRICE_PER_KM;
         } else {
             return FLAG_PRICE;
