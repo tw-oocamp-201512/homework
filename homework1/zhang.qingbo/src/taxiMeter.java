@@ -24,4 +24,8 @@ public class taxiMeter {
     public double waitFee(int minutes) {
         return minutes * PRICE_FOR_WAITING_PER_MIN;
     }
+
+    public double total(int distance, int minutes) {
+        return Math.round(distanceFee(distance) + waitFee(minutes));
+    }
 }
