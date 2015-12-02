@@ -1,0 +1,6 @@
+* tasking for taxi meter
+  1. resolve distance fee for flag distance (distance <= 2km)
+  2. resolve distance fee for normal distance(2km < distance <= 8km)
+  3. resolve distance fee for extra distance( distance > 8km)
+  4. resolve waiting fee
+  5. resolve total fee including distance fee and waiting fee
