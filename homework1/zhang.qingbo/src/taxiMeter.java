@@ -8,6 +8,7 @@ public class taxiMeter {
     public static final double PRECISION = 0.001;
     public static final double  BASE_DISTANCE = 8.0;
     public static final double  LONG_DISTANCE_EXTRA_CHARGE = 0.5;
+    public static final double PRICE_FOR_WAITING_PER_MIN = 0.25;
 
     public double distanceFee(int distance) {
 
@@ -18,5 +19,9 @@ public class taxiMeter {
         } else {
             return FLAG_PRICE;
         }
+    }
+
+    public double waitFee(int minutes) {
+        return minutes * PRICE_FOR_WAITING_PER_MIN;
     }
 }

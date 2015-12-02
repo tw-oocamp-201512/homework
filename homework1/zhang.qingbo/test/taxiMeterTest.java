@@ -30,4 +30,11 @@ public class taxiMeterTest {
     public void should_return_13_point_2_when_distance_is_10_km()  {
         assertEquals(13.2, Fee.distanceFee(10), DELTA);
     }
+
+    @Test
+    public void should_return_2_point_5_when_waiting_for_10_min()  {
+        assertEquals(2.5, Fee.waitFee(10), DELTA);
+    }
+
+    
 }
