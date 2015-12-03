@@ -36,4 +36,9 @@ public class TaximeterTest {
         x += 0.5;
         assertEquals(6, meter.getRoundingResult(x), 0);
     }
+
+    @Test
+    public void testGetFinalCharge() throws Exception {
+        assertEquals(15, meter.getFinalCharge(10500, 4), 0);
+    }
 }
