@@ -18,4 +18,12 @@ public class TaximeterTest {
     public void testCalculateByDistance() throws Exception {
         assertEquals(6, meter.calculateByDistance(1500), 0);
     }
+
+    @Test
+    public void testGetRoundingResult() throws Exception {
+        double x = 5.2;
+        assertEquals(5, meter.getRoundingResult(x), 0);
+        x += 0.5;
+        assertEquals(6, meter.getRoundingResult(x), 0);
+    }
 }
