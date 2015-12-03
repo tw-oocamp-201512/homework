@@ -10,6 +10,8 @@ public class Taximeter {
     public double calculateByDistance(double distance) {
         if (distance <= 2000) {
             return 6;
+        } else if (distance < 8000) {
+            return 6 + (distance - 2000) / 1000 * 0.8;
         }
         return 0;
     }

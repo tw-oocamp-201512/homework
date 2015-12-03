@@ -16,7 +16,10 @@ public class TaximeterTest {
 
     @Test
     public void testCalculateByDistance() throws Exception {
-        assertEquals(6, meter.calculateByDistance(1500), 0);
+        double origin = 1500;
+        assertEquals(6, meter.calculateByDistance(origin), 0);
+        origin += 1000;
+        assertEquals(6.4, meter.calculateByDistance(origin), 0);
     }
 
     @Test
