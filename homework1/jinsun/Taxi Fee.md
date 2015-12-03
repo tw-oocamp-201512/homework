@@ -72,7 +72,7 @@ Of cause, to make sure we can run this test, we must add some classes and functi
 }
 ```
 Now, let's run this test!
-![Test 1](http://en.moepic.net/images/2015/12/03/ScreenShot2015-12-02at8.28.30PM.png)
+![Test 1](https://raw.githubusercontent.com/sunjintw/homework/master/homework1/jinsun/screenshot/Screen%20Shot%202015-12-02%20at%208.28.30%20PM.png)
 
 Oh, it failed. Don't worry, just leave it here, we can continiue doing the next thing. we can write the specific test for each detail requirement. For the first one is the start price caculator. By the way, we should refactor the test class to move the order object.
 
@@ -107,7 +107,7 @@ And then, write the start price calculator, of cause, write the price calculator
     }
 ```
 Now, run the *testStartPrice* test case.
-![Test 2](http://en.moepic.net/images/2015/12/03/ScreenShot2015-12-02at9.06.52PM.png)
+![Test 2](https://raw.githubusercontent.com/sunjintw/homework/master/homework1/jinsun/screenshot/Screen%20Shot%202015-12-02%20at%209.06.52%20PM.png)
 
 Yeah~ this one is passed. So, we should doing this for each specific reuqirement as below:
 
@@ -172,6 +172,6 @@ After this, we should upadte the TaxiFee's calculate function.
 }
 ```
 Last but not least, run all these test cases and check the result.
-![Test 3](http://en.moepic.net/images/2015/12/03/ScreenShot2015-12-02at9.55.10PM.png)
+![Test 3](https://raw.githubusercontent.com/sunjintw/homework/master/homework1/jinsun/screenshot/Screen%20Shot%202015-12-02%20at%209.55.10%20PM.png)
 
 *This is my first applacation which is followed the TDD process, I still have a lot of confusion of TDD, but I think more close more clear.*
