@@ -25,6 +25,11 @@ public class TaximeterTest {
     }
 
     @Test
+    public void testCalculateByTime() throws Exception {
+        assertEquals(1, meter.calculateByTime(4), 0);
+    }
+
+    @Test
     public void testGetRoundingResult() throws Exception {
         double x = 5.2;
         assertEquals(5, meter.getRoundingResult(x), 0);
