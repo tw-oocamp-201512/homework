@@ -6,6 +6,9 @@ package com.tw;
 public class Taximeter {
 
     public double calculateByDistance(double distance) {
+        if (distance <= 2000) {
+            return 6;
+        }
         return 0;
     }
 }
