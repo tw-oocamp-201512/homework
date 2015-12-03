@@ -20,6 +20,8 @@ public class TaximeterTest {
         assertEquals(6, meter.calculateByDistance(origin), 0);
         origin += 1000;
         assertEquals(6.4, meter.calculateByDistance(origin), 0);
+        origin += 8000;
+        assertEquals(13.8, meter.calculateByDistance(origin), 0);
     }
 
     @Test

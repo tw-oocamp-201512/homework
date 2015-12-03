@@ -13,7 +13,7 @@ public class Taximeter {
         } else if (distance < 8000) {
             return 6 + (distance - 2000) / 1000 * 0.8;
         }
-        return 0;
+        return 6 + 4.8 + (distance - 8000) / 1000 * 1.2;
     }
 
     public double getRoundingResult(double origin) {
