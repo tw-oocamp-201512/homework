@@ -24,6 +24,9 @@ public class ExampleSpec {
             it("1.1m == 1100mm", () -> {
                 assertThat(new Length(1.1, "m")).isEqualTo(new Length(1100, "mm"));
             });
+            it("22cm == 220mm", () -> {
+                assertThat(new Length(22, "cm")).isEqualTo(new Length(220, "mm"));
+            });
         });
 
     }

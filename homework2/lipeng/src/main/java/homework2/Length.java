@@ -12,12 +12,21 @@ public class Length {
     @Override
     public boolean equals(Object obj) {
         Length that = (Length) obj;
+        return convertToM(this) == convertToM(that);
+    }
+
+    private double convertToM(Length that) {
         if (that.unit.equals("cm")) {
-            return value == that.value / 100;
+            return that.value / 100;
         }
         if (that.unit.equals("mm")) {
-            return value == that.value / 1000;
+            return that.value / 1000;
         }
-        return value == that.value;
+        return that.value;
+    }
+
+    @Override
+    public String toString() {
+        return value + unit;
     }
 }
