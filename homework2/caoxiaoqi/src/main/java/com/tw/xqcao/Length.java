@@ -10,6 +10,18 @@ public class Length {
         this.unitType = unitType;
     }
 
+    public void plusLength(Length otherLength) {
+        this.value = (this.getMillimeterValue() + otherLength.getMillimeterValue()) / this.unitType.getValue();
+    }
+
+    public void subLength(Length otherLength) {
+        this.value = (this.getMillimeterValue() - otherLength.getMillimeterValue()) / this.unitType.getValue();
+    }
+
+    public double getMillimeterValue() {
+        return this.value * this.unitType.getValue();
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Length) {
@@ -18,17 +30,5 @@ public class Length {
         } else {
             return super.equals(obj);
         }
-    }
-
-    public void plusLength(Length otherLength) {
-        this.value = (this.getMillimeterValue() + otherLength.getMillimeterValue()) / this.unitType.getValue();
-    }
-
-    public double getMillimeterValue() {
-        return this.value * this.unitType.getValue();
-    }
-
-    public void subLength(Length otherLength) {
-        this.value = (this.getMillimeterValue() - otherLength.getMillimeterValue()) / this.unitType.getValue();
     }
 }
