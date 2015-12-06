@@ -19,4 +19,12 @@ public class Length {
             return super.equals(obj);
         }
     }
+
+    public void plusLength(Length otherLength) {
+        this.value = (this.getMillimeterValue() + otherLength.getMillimeterValue()) / this.unitType.getValue();
+    }
+
+    public double getMillimeterValue() {
+        return this.value * this.unitType.getValue();
+    }
 }
