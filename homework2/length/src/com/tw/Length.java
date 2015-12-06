@@ -15,7 +15,11 @@ public class Length {
 
     @Override
     public boolean equals(Object other) {
-        Length otherLength = (Length) other;
-        return this.convertToBaseValue() == otherLength.convertToBaseValue();
+        if (other instanceof Length) {
+            Length otherLength = (Length) other;
+            return this.convertToBaseValue() == otherLength.convertToBaseValue();
+            
+        }
+        return false;
     }
 }

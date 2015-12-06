@@ -1,7 +1,7 @@
 package com.tw;
 
 public enum Unit {
-    M(100), CM(1);
+    M(1000), CM(10), MM(1);
     
     private final int value;
 

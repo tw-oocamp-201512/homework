@@ -19,4 +19,11 @@ public class LengthTest {
         Length oneHundredCM = new Length(100, Unit.CM);
         assertThat(oneM, is(oneHundredCM));
     }
+
+    @Test
+    public void test1MIs1000MM() throws Exception {
+        Length oneM = new Length(1, Unit.M);
+        Length oneThousandMM = new Length(1000, Unit.MM);
+        assertThat(oneM, is(oneThousandMM));
+    }
 }
