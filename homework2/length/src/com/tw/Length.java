@@ -3,6 +3,7 @@ package com.tw;
 public class Length {
     private Unit unit;
     private int value;
+    private static final LengthCalculator calculator = new LengthCalculator();
 
     public Length(int value, Unit unit) {
         this.value = value;
@@ -18,13 +19,15 @@ public class Length {
         if (other instanceof Length) {
             Length otherLength = (Length) other;
             return this.convertToBaseValue() == otherLength.convertToBaseValue();
-            
         }
         return false;
     }
 
     public Length add(Length other) {
-        int baseValue = this.convertToBaseValue() + other.convertToBaseValue();
-        return new Length(baseValue, Unit.getBaseUnit());
+        return calculator.add(this, other);
+    }
+
+    public Length minus(Length other) {
+        return calculator.minus(this, other);
     }
 }

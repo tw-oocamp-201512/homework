@@ -37,4 +37,15 @@ public class LengthTest {
         
         assertThat(expectedLength, is(resultLength));
     }
+
+    @Test
+    public void test2MMinus100CMIs1M() throws Exception {
+        Length twoM = new Length(2, Unit.M);
+        Length oneHundredCM = new Length(100, Unit.CM);
+        
+        Length resultLength = twoM.minus(oneHundredCM);
+        Length expectedLength = new Length(1, Unit.M);
+        
+        assertThat(expectedLength, is(resultLength));
+    }
 }
