@@ -27,4 +27,8 @@ public class Length {
     public double getMillimeterValue() {
         return this.value * this.unitType.getValue();
     }
+
+    public void subLength(Length otherLength) {
+        this.value = (this.getMillimeterValue() - otherLength.getMillimeterValue()) / this.unitType.getValue();
+    }
 }
