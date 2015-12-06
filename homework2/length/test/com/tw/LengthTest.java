@@ -26,4 +26,15 @@ public class LengthTest {
         Length oneThousandMM = new Length(1000, Unit.MM);
         assertThat(oneM, is(oneThousandMM));
     }
+    
+    @Test
+    public void test1MAdd100CMIs2M() throws Exception {
+        Length oneM = new Length(1, Unit.M);
+        Length oneHundredCM = new Length(100, Unit.CM);
+        
+        Length resultLength = oneM.add(oneHundredCM);
+        Length expectedLength = new Length(2, Unit.M);
+        
+        assertThat(expectedLength, is(resultLength));
+    }
 }

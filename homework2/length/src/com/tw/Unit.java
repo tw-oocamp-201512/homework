@@ -12,4 +12,8 @@ public enum Unit {
     public int getValue() {
         return value;
     }
+    
+    static public Unit getBaseUnit() {
+        return MM;
+    }
 }

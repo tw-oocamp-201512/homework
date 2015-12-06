@@ -22,4 +22,9 @@ public class Length {
         }
         return false;
     }
+
+    public Length add(Length other) {
+        int baseValue = this.convertToBaseValue() + other.convertToBaseValue();
+        return new Length(baseValue, Unit.getBaseUnit());
+    }
 }
