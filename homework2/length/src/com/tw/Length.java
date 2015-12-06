@@ -1,28 +1,21 @@
 package com.tw;
 
 public class Length {
-    private String unit;
+    private Unit unit;
     private int value;
 
-    public Length(int value, String unit) {
+    public Length(int value, Unit unit) {
         this.value = value;
         this.unit = unit;
     }
 
-    public String getUnit() {
-        return unit;
-    }
-
-    public int getValue() {
-        return value;
+    public int convertToBaseValue() {
+        return this.value * this.unit.getValue();
     }
 
     @Override
     public boolean equals(Object other) {
         Length otherLength = (Length) other;
-        if (this.unit.equals(otherLength.getUnit())) {
-            return this.value == otherLength.getValue();
-        } 
-        return false;
+        return this.convertToBaseValue() == otherLength.convertToBaseValue();
     }
 }
