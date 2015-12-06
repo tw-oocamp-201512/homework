@@ -35,4 +35,8 @@ public class Length {
             return super.equals(obj);
         }
     }
+
+    public void divisionNumber(double number) {
+        this.value /= number;
+    }
 }
