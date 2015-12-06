@@ -14,8 +14,12 @@ public class Length {
         this.value = (this.getMillimeterValue() + otherLength.getMillimeterValue()) / this.unitType.getValue();
     }
 
-    public void subLength(Length otherLength) {
+    public void minusLength(Length otherLength) {
         this.value = (this.getMillimeterValue() - otherLength.getMillimeterValue()) / this.unitType.getValue();
+    }
+
+    public void timesNumber(double number) {
+        this.value *= number;
     }
 
     public double getMillimeterValue() {

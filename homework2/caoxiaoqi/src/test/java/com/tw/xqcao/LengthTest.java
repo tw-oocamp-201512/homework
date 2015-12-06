@@ -62,32 +62,41 @@ public class LengthTest {
     }
 
     @Test
-    public void shouldReturnCorrectLengthWhenSubOneMeterLength() {
+    public void shouldReturnCorrectLengthWhenMinusOneMeterLength() {
         Length oneLength = new Length(23.45, LengthUnit.M);
         Length otherLength = new Length(12.34, LengthUnit.M);
 
-        oneLength.subLength(otherLength);
+        oneLength.minusLength(otherLength);
 
         assertThat(oneLength.getMillimeterValue(), is(11110.0));
     }
 
     @Test
-    public void shouldReturnCorrectLengthWhenSubOneCentimeterLength() {
+    public void shouldReturnCorrectLengthWhenMinusOneCentimeterLength() {
         Length oneLength = new Length(23.45, LengthUnit.M);
         Length otherLength = new Length(12.34, LengthUnit.CM);
 
-        oneLength.subLength(otherLength);
+        oneLength.minusLength(otherLength);
 
         assertThat(oneLength.getMillimeterValue(), is(23326.6));
     }
 
     @Test
-    public void shouldReturnCorrectLengthWhenSubOneMillimeterLength() {
+    public void shouldReturnCorrectLengthWhenMinusOneMillimeterLength() {
         Length oneLength = new Length(23.45, LengthUnit.M);
         Length otherLength = new Length(12.34, LengthUnit.MM);
 
-        oneLength.subLength(otherLength);
+        oneLength.minusLength(otherLength);
 
         assertThat(oneLength.getMillimeterValue(), is(23437.66));
+    }
+
+    @Test
+    public void shouldReturnCorrectLengthWhenTimesOneNumber() {
+        Length oneLength = new Length(12.34, LengthUnit.M);
+        
+        oneLength.timesNumber(12.3);
+        
+        assertThat(oneLength.getMillimeterValue(), is(151782.0));
     }
 }
