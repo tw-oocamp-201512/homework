@@ -48,4 +48,24 @@ public class LengthTest {
         
         assertThat(expectedLength, is(resultLength));
     }
+
+    @Test
+    public void test1MMultiple2Is2M() throws Exception {
+        Length oneM = new Length(1, Unit.M);
+        
+        Length resultLength = oneM.multiple(2);
+        Length expectedLength = new Length(2, Unit.M);
+        
+        assertThat(expectedLength, is(resultLength));
+    }
+
+    @Test
+    public void test200CMDivide2Is1M() throws Exception {
+        Length twoHundredCM = new Length(200, Unit.CM);
+        
+        Length resultLength = twoHundredCM.divide(2);
+        Length expectedLength = new Length(1, Unit.M);
+        
+        assertThat(expectedLength, is(resultLength));
+    }
 }

@@ -30,4 +30,12 @@ public class Length {
     public Length minus(Length other) {
         return calculator.minus(this, other);
     }
+
+    public Length multiple(int multiplier) {
+        return calculator.multiple(this, multiplier);
+    }
+
+    public Length divide(int divider) {
+        return calculator.divide(this, divider);
+    }
 }
