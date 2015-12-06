@@ -69,5 +69,11 @@ public class ExampleSpec {
                 });
             });
         });
+
+        describe("验收测试", () -> {
+            it("1m / 4 + 10cm * 3 – 5mm", () -> {
+                assertThat(new Length(1, m).divide(4).add(new Length(10, cm).multiply(3)).minus(new Length(5, mm))).isEqualTo(new Length(545, mm));
+            });
+        });
     }
 }
