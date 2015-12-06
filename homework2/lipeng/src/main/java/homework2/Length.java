@@ -23,4 +23,12 @@ public class Length {
     public String toString() {
         return value + unit.name();
     }
+
+    public Length multiply(int number) {
+        return new Length(value * number, unit);
+    }
+
+    public Length divide(int number) {
+        return new Length(value / number, unit);
+    }
 }

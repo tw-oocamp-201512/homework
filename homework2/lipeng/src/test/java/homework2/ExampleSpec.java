@@ -32,5 +32,24 @@ public class ExampleSpec {
             });
         });
 
+        describe("长度可与数字进行乘除运算", () -> {
+            describe("乘法", () -> {
+                it("1m x 2 == 2m", () -> {
+                    assertThat(new Length(1, m).multiply(2)).isEqualTo(new Length(2, m));
+                });
+                it("20cm * 2 == 400mm", () -> {
+                    assertThat(new Length(20, cm).multiply(2)).isEqualTo(new Length(400, mm));
+                });
+            });
+            describe("除法", () -> {
+                it("2m / 2 == 1m", () -> {
+                    assertThat(new Length(2, m).divide(2)).isEqualTo(new Length(1, m));
+                });
+                it("20cm / 2 == 100mm", () -> {
+                    assertThat(new Length(20, cm).divide(2)).isEqualTo(new Length(100, mm));
+                });
+            });
+        });
+
     }
 }
