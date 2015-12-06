@@ -1,0 +1,17 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "http://dl.bintray.com/greghaskins/maven"
+    }
+}
+
+dependencies {
+    testCompile(
+            'com.greghaskins:spectrum:0.4.4',
+            'org.assertj:assertj-core:2.2.0',
+            'junit:junit:4.11'
+    )
+}
