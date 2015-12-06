@@ -2,15 +2,15 @@ package com.tw;
 
 public class Length {
     private Unit unit;
-    private int value;
+    private double value;
     private static final LengthCalculator calculator = new LengthCalculator();
 
-    public Length(int value, Unit unit) {
+    public Length(double value, Unit unit) {
         this.value = value;
         this.unit = unit;
     }
 
-    public int convertToBaseValue() {
+    public double convertToBaseValue() {
         return this.value * this.unit.getValue();
     }
 
