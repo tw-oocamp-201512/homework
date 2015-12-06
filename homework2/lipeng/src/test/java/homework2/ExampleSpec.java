@@ -51,5 +51,23 @@ public class ExampleSpec {
             });
         });
 
+        describe("长度之间可以进行加减运算", () -> {
+            describe("加法", () -> {
+                it("1m + 2m == 3m", () -> {
+                    assertThat(new Length(1, m).add(new Length(2, m))).isEqualTo(new Length(3, m));
+                });
+                it("20cm + 30mm == 23cm", () -> {
+                    assertThat(new Length(20, cm).add(new Length(30, mm))).isEqualTo(new Length(23, cm));
+                });
+            });
+            describe("减法", () -> {
+                it("5m - 1m == 4m", () -> {
+                    assertThat(new Length(5, m).minus(new Length(1, m))).isEqualTo(new Length(4, m));
+                });
+                it("3000mm - 100cm == 200cm", () -> {
+                    assertThat(new Length(3000, mm).minus(new Length(100, cm))).isEqualTo(new Length(200, cm));
+                });
+            });
+        });
     }
 }

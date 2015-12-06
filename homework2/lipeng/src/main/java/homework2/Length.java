@@ -31,4 +31,12 @@ public class Length {
     public Length divide(int number) {
         return new Length(value / number, unit);
     }
+
+    public Length add(Length that) {
+        return new Length(convertToM() + that.convertToM(), Unit.m);
+    }
+
+    public Length minus(Length that) {
+        return new Length(convertToM() - that.convertToM(), Unit.m);
+    }
 }
