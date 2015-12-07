@@ -10,16 +10,20 @@ public class Length {
         this.unitType = unitType;
     }
 
-    public void plusLength(Length otherLength) {
+    public void plus(Length otherLength) {
         this.value = (this.getMillimeterValue() + otherLength.getMillimeterValue()) / this.unitType.getValue();
     }
 
-    public void minusLength(Length otherLength) {
+    public void minus(Length otherLength) {
         this.value = (this.getMillimeterValue() - otherLength.getMillimeterValue()) / this.unitType.getValue();
     }
 
-    public void timesNumber(double number) {
+    public void multiply(double number) {
         this.value *= number;
+    }
+
+    public void divide(double number) {
+        this.value /= number;
     }
 
     public double getMillimeterValue() {
@@ -34,9 +38,5 @@ public class Length {
         } else {
             return super.equals(obj);
         }
-    }
-
-    public void divisionNumber(double number) {
-        this.value /= number;
     }
 }

@@ -36,7 +36,7 @@ public class LengthTest {
         Length oneLength = new Length(12.34, LengthUnit.M);
         Length otherLength = new Length(23.45, LengthUnit.M);
 
-        oneLength.plusLength(otherLength);
+        oneLength.plus(otherLength);
 
         assertThat(oneLength.getMillimeterValue(), is(35790.0));
     }
@@ -46,7 +46,7 @@ public class LengthTest {
         Length oneLength = new Length(12.34, LengthUnit.M);
         Length otherLength = new Length(23.45, LengthUnit.CM);
 
-        oneLength.plusLength(otherLength);
+        oneLength.plus(otherLength);
 
         assertThat(oneLength.getMillimeterValue(), is(12574.5));
     }
@@ -56,7 +56,7 @@ public class LengthTest {
         Length oneLength = new Length(12.34, LengthUnit.M);
         Length otherLength = new Length(23.45, LengthUnit.MM);
 
-        oneLength.plusLength(otherLength);
+        oneLength.plus(otherLength);
 
         assertThat(oneLength.getMillimeterValue(), is(12363.45));
     }
@@ -66,7 +66,7 @@ public class LengthTest {
         Length oneLength = new Length(23.45, LengthUnit.M);
         Length otherLength = new Length(12.34, LengthUnit.M);
 
-        oneLength.minusLength(otherLength);
+        oneLength.minus(otherLength);
 
         assertThat(oneLength.getMillimeterValue(), is(11110.0));
     }
@@ -76,7 +76,7 @@ public class LengthTest {
         Length oneLength = new Length(23.45, LengthUnit.M);
         Length otherLength = new Length(12.34, LengthUnit.CM);
 
-        oneLength.minusLength(otherLength);
+        oneLength.minus(otherLength);
 
         assertThat(oneLength.getMillimeterValue(), is(23326.6));
     }
@@ -86,7 +86,7 @@ public class LengthTest {
         Length oneLength = new Length(23.45, LengthUnit.M);
         Length otherLength = new Length(12.34, LengthUnit.MM);
 
-        oneLength.minusLength(otherLength);
+        oneLength.minus(otherLength);
 
         assertThat(oneLength.getMillimeterValue(), is(23437.66));
     }
@@ -95,7 +95,7 @@ public class LengthTest {
     public void shouldReturnCorrectLengthWhenTimesOneNumber() {
         Length oneLength = new Length(12.34, LengthUnit.M);
 
-        oneLength.timesNumber(12.3);
+        oneLength.multiply(12.3);
 
         assertThat(oneLength.getMillimeterValue(), is(151782.0));
     }
@@ -104,7 +104,7 @@ public class LengthTest {
     public void shouldReturnCorrectLengthWhenDivisionOneNumber() {
         Length oneLength = new Length(12.34, LengthUnit.M);
 
-        oneLength.divisionNumber(2);
+        oneLength.divide(2);
 
         assertThat(oneLength.getMillimeterValue(), is(6170.0));
     }
