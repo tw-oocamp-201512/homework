@@ -25,7 +25,7 @@ public class Length {
         return this;
     }
 
-    public Length divideConstant(int constant) {
+    public Length divide(int constant) {
         this.value /= constant;
         this.displayValue /= constant;
         return this;
@@ -49,13 +49,13 @@ public class Length {
         return this;
     }
 
-    public Length addAnotherLength(Length other) {
+    public Length add(Length other) {
         this.value += other.value;
         this.displayValue = calculateDisplayValue(this.unite, this.value);
         return this;
     }
 
-    public Length subtractAnotherLength(Length other) {
+    public Length subtract(Length other) {
         this.value -= other.value;
         this.displayValue = calculateDisplayValue(this.unite, this.value);
         return this;

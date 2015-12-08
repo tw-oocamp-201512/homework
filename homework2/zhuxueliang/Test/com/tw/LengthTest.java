@@ -22,10 +22,10 @@ public class LengthTest {
     }
 
     @Test
-    public void testDivideConstant() {
+    public void testDivide() {
         Length oneLength = new Length(1, "m");
 
-        assertTrue(oneLength.divideConstant(2).equals(new Length(500, "mm")));
+        assertTrue(oneLength.divide(2).equals(new Length(500, "mm")));
     }
 
     @Test
@@ -50,18 +50,18 @@ public class LengthTest {
     }
 
     @Test
-    public void testAddAnotherLength() {
+    public void testAdd() {
         Length oneLength = new Length(2000, "mm");
         Length otherLength = new Length(15, "m");
 
-        assertTrue(oneLength.addAnotherLength(otherLength).equals(new Length(17, "m")));
+        assertTrue(oneLength.add(otherLength).equals(new Length(17, "m")));
     }
 
     @Test
-    public void testSubtractAnotherLength() {
+    public void testSubtract() {
         Length oneLength = new Length(200, "mm");
         Length otherLength = new Length(1, "cm");
 
-        assertTrue(oneLength.subtractAnotherLength(otherLength).equals(new Length(190, "mm")));
+        assertTrue(oneLength.subtract(otherLength).equals(new Length(190, "mm")));
     }
 }
