@@ -19,7 +19,7 @@ public class Length {
         this.unite = unite;
     }
 
-    public Length multiConstant(int constant) {
+    public Length multiply(int constant) {
         this.value *= constant;
         this.displayValue *= constant;
         return this;

@@ -15,10 +15,10 @@ public class LengthTest {
     }
 
     @Test
-    public void testMultiConstant() {
+    public void testMultiply() {
         Length oneLength = new Length(1, "m");
 
-        assertTrue(oneLength.multiConstant(2).equals(new Length(2000, "mm")));
+        assertTrue(oneLength.multiply(2).equals(new Length(2000, "mm")));
     }
 
     @Test
