@@ -1,5 +1,7 @@
 package com.tw.length;
 
+import java.math.BigDecimal;
+
 public enum LengthUnit {
     MM(1),CM(10),M(1000);
 
@@ -9,7 +11,11 @@ public enum LengthUnit {
         return times;
     }
 
-    LengthUnit(int i) {
-        this.times = i;
+    LengthUnit(int times) {
+        this.times = times;
+    }
+
+    public BigDecimal getBigDecimalTimes() {
+        return new BigDecimal(times);
     }
 }
