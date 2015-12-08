@@ -20,45 +20,31 @@ public final class Length {
     }
 
     public Length multiply(int constant) {
-        this.value *= constant;
-        this.displayValue *= constant;
-        return this;
+        return new Length(this.displayValue * constant, this.unite);
     }
 
     public Length divide(int constant) {
-        this.value /= constant;
-        this.displayValue /= constant;
-        return this;
+        return new Length(this.displayValue / constant, this.unite);
     }
 
     public Length getMMLength() {
-        this.displayValue = value;
-        this.unite = "mm";
-        return this;
+        return new Length(this.value, "mm");
     }
 
     public Length getCMLength() {
-        this.displayValue = value / 10;
-        this.unite = "cm";
-        return this;
+        return new Length(this.value / 10, "cm");
     }
 
     public Length getMLength() {
-        this.displayValue = value / 1000;
-        this.unite = "m";
-        return this;
+        return new Length(this.value / 1000, "m");
     }
 
     public Length add(Length other) {
-        this.value += other.value;
-        this.displayValue = calculateDisplayValue(this.unite, this.value);
-        return this;
+        return new Length(calculateDisplayValue(this.unite, this.value + other.value), this.unite);
     }
 
     public Length subtract(Length other) {
-        this.value -= other.value;
-        this.displayValue = calculateDisplayValue(this.unite, this.value);
-        return this;
+        return new Length(calculateDisplayValue(this.unite, this.value - other.value), this.unite);
     }
 
     private double calculateDisplayValue(String unite, double value) {
