@@ -1,12 +1,12 @@
 package com.tw;
 
-public class MyLength {
+public class Length {
 
     private double value;
     public String unite;
     public double displayValue;
 
-    public MyLength(double displayValue, String unite) {
+    public Length(double displayValue, String unite) {
 
         this.displayValue = displayValue;
         if (unite.equals("mm")) {
@@ -19,43 +19,43 @@ public class MyLength {
         this.unite = unite;
     }
 
-    public MyLength multiConstant(int constant) {
+    public Length multiConstant(int constant) {
         this.value *= constant;
         this.displayValue *= constant;
         return this;
     }
 
-    public MyLength divideConstant(int constant) {
+    public Length divideConstant(int constant) {
         this.value /= constant;
         this.displayValue /= constant;
         return this;
     }
 
-    public MyLength getMMLength() {
+    public Length getMMLength() {
         this.displayValue = value;
         this.unite = "mm";
         return this;
     }
 
-    public MyLength getCMLength() {
+    public Length getCMLength() {
         this.displayValue = value / 10;
         this.unite = "cm";
         return this;
     }
 
-    public MyLength getMLength() {
+    public Length getMLength() {
         this.displayValue = value / 100;
         this.unite = "m";
         return this;
     }
 
-    public MyLength addAnotherLength(MyLength other) {
+    public Length addAnotherLength(Length other) {
         this.value += other.value;
         this.displayValue = calculateDisplayValue(this.unite, this.value);
         return this;
     }
 
-    public MyLength subtractAnotherLength(MyLength other) {
+    public Length subtractAnotherLength(Length other) {
         this.value -= other.value;
         this.displayValue = calculateDisplayValue(this.unite, this.value);
         return this;
@@ -75,8 +75,8 @@ public class MyLength {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj instanceof MyLength) {
-            MyLength otherLength = (MyLength)obj;
+        if (obj instanceof Length) {
+            Length otherLength = (Length)obj;
             return this.value == otherLength.value;
         } else {
             return false;
