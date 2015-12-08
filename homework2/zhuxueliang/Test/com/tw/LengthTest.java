@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 public class LengthTest {
 
     @Test
-    public void testLengthEqual() {
+    public void test_1m_EqualTo_1000mm() {
         Length oneLength = new Length(1, "m");
         Length otherLength = new Length(1000, "mm");
 
@@ -15,14 +15,14 @@ public class LengthTest {
     }
 
     @Test
-    public void testMultiply() {
+    public void test_1m_Multiply2_EqualTo_2000mm() {
         Length oneLength = new Length(1, "m");
 
         assertTrue(oneLength.multiply(2).equals(new Length(2000, "mm")));
     }
 
     @Test
-    public void testDivide() {
+    public void test_1m_Divide2_EqualTo_500mm() {
         Length oneLength = new Length(1, "m");
 
         assertTrue(oneLength.divide(2).equals(new Length(500, "mm")));
@@ -50,7 +50,7 @@ public class LengthTest {
     }
 
     @Test
-    public void testAdd() {
+    public void test_2000mm_Add_15m_EqualTo_17m() {
         Length oneLength = new Length(2000, "mm");
         Length otherLength = new Length(15, "m");
 
@@ -58,7 +58,7 @@ public class LengthTest {
     }
 
     @Test
-    public void testSubtract() {
+    public void test_200mm_Subtract_1cm_EqualTo_190mm() {
         Length oneLength = new Length(200, "mm");
         Length otherLength = new Length(1, "cm");
 

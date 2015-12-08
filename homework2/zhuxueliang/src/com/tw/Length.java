@@ -3,20 +3,20 @@ package com.tw;
 public final class Length {
 
     private double value;
-    private String unite;
-    private double displayValue;
+    private final String unite;
+    private final double displayValue;
 
-    public Length(double displayValue, String unite) {
+    public Length(double displayValue, String unit) {
 
         this.displayValue = displayValue;
-        if (unite.equals("mm")) {
+        if (unit.equals("mm")) {
             this.value = displayValue;
-        } else if (unite.equals("cm")) {
+        } else if (unit.equals("cm")) {
             this.value = displayValue * 10;
-        } else if (unite.equals("m")) {
+        } else if (unit.equals("m")) {
             this.value = displayValue * 1000;
         }
-        this.unite = unite;
+        this.unite = unit;
     }
 
     public Length multiply(int constant) {
