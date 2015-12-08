@@ -64,4 +64,12 @@ public class LengthTest {
 
         assertTrue(oneLength.subtract(otherLength).equals(new Length(190, "mm")));
     }
+
+    @Test
+    public void testComplexCalculate() {
+        Length result1 = new Length(1, "m").multiply(3);
+        Length result2 = new Length(2, "m").divide(2);
+
+        assertTrue(new Length(4000, "mm").equals(result1.add(result2)));
+    }
 }
