@@ -14,7 +14,7 @@ public class Length {
         } else if (unite.equals("cm")) {
             this.value = displayValue * 10;
         } else if (unite.equals("m")) {
-            this.value = displayValue * 100;
+            this.value = displayValue * 1000;
         }
         this.unite = unite;
     }
@@ -44,7 +44,7 @@ public class Length {
     }
 
     public Length getMLength() {
-        this.displayValue = value / 100;
+        this.displayValue = value / 1000;
         this.unite = "m";
         return this;
     }
@@ -68,7 +68,7 @@ public class Length {
         } else if (this.unite.equals("cm")) {
             displayValue = value / 10;
         } else if (this.unite.equals("m")) {
-            displayValue = value / 100;
+            displayValue = value / 1000;
         }
         return displayValue;
     }
