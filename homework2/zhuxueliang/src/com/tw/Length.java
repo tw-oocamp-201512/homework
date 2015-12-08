@@ -1,10 +1,10 @@
 package com.tw;
 
-public class Length {
+public final class Length {
 
     private double value;
-    public String unite;
-    public double displayValue;
+    private String unite;
+    private double displayValue;
 
     public Length(double displayValue, String unite) {
 
