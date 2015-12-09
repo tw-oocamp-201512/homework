@@ -36,12 +36,12 @@ namespace PackingLot
         {
             if (_sendedTickets.Contains(ticket))
             {
-                return false;
+                _sendedTickets.Remove(ticket);
+                return true;
             }
             else
             {
-                _sendedTickets.Remove(ticket);
-                return true;
+                return false;
             }
         }
     }
