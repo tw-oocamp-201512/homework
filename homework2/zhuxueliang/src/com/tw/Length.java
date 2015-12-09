@@ -1,30 +1,24 @@
 package com.tw;
 
-public final class Length {
+public class Length {
 
     private double value;
-    private final String unite;
+    private final Unit unit;
     private final double displayValue;
 
     public Length(double displayValue, String unit) {
 
         this.displayValue = displayValue;
-        if (unit.equals("mm")) {
-            this.value = displayValue;
-        } else if (unit.equals("cm")) {
-            this.value = displayValue * 10;
-        } else if (unit.equals("m")) {
-            this.value = displayValue * 1000;
-        }
-        this.unite = unit;
+        this.unit = Unit.valueOf(unit);
+        this.value = this.unit.getValue(displayValue);
     }
 
     public Length multiply(int constant) {
-        return new Length(this.displayValue * constant, this.unite);
+        return new Length(this.displayValue * constant, this.unit.toString());
     }
 
     public Length divide(int constant) {
-        return new Length(this.displayValue / constant, this.unite);
+        return new Length(this.displayValue / constant, this.unit.toString());
     }
 
     public Length getMMLength() {
@@ -40,30 +34,18 @@ public final class Length {
     }
 
     public Length add(Length other) {
-        return new Length(calculateDisplayValue(this.unite, this.value + other.value), this.unite);
+        return new Length(this.unit.getDisplayValue(this.value + other.value), this.unit.toString());
     }
 
     public Length subtract(Length other) {
-        return new Length(calculateDisplayValue(this.unite, this.value - other.value), this.unite);
-    }
-
-    private double calculateDisplayValue(String unite, double value) {
-        double displayValue = 0;
-        if (unite.equals("mm")) {
-            displayValue = value;
-        } else if (this.unite.equals("cm")) {
-            displayValue = value / 10;
-        } else if (this.unite.equals("m")) {
-            displayValue = value / 1000;
-        }
-        return displayValue;
+        return new Length(this.unit.getDisplayValue(this.value - other.value), this.unit.toString());
     }
 
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Length) {
             Length otherLength = (Length)obj;
-            return this.value == otherLength.value;
+            return value == otherLength.value;
         } else {
             return false;
         }
