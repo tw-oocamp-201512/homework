@@ -31,5 +31,18 @@ namespace PackingLot
                 return null;
             }
         }
+
+        public bool CarOut(Ticket ticket)
+        {
+            if (_sendedTickets.Contains(ticket))
+            {
+                return false;
+            }
+            else
+            {
+                _sendedTickets.Remove(ticket);
+                return true;
+            }
+        }
     }
 }
