@@ -14,31 +14,31 @@ public class Length {
     }
 
     public Length multiply(int constant) {
-        return new Length(this.displayValue * constant, this.unit.toString());
+        return new Length(displayValue * constant, unit.toString());
     }
 
     public Length divide(int constant) {
-        return new Length(this.displayValue / constant, this.unit.toString());
+        return new Length(displayValue / constant, unit.toString());
     }
 
     public Length getMMLength() {
-        return new Length(this.value, "mm");
+        return new Length(value, "mm");
     }
 
     public Length getCMLength() {
-        return new Length(this.value / 10, "cm");
+        return new Length(value / 10, "cm");
     }
 
     public Length getMLength() {
-        return new Length(this.value / 1000, "m");
+        return new Length(value / 1000, "m");
     }
 
     public Length add(Length other) {
-        return new Length(this.unit.getDisplayValue(this.value + other.value), this.unit.toString());
+        return new Length(unit.getDisplayValue(this.value + other.value), unit.toString());
     }
 
     public Length subtract(Length other) {
-        return new Length(this.unit.getDisplayValue(this.value - other.value), this.unit.toString());
+        return new Length(unit.getDisplayValue(this.value - other.value), unit.toString());
     }
 
     @Override
