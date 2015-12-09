@@ -42,8 +42,7 @@ public class ParkingLotTest {
 
     @Test
     public void testCarOutFailed() {
-        String carNumber = "bbb";
-        Ticket ticket = parkingLot.carIn(carNumber);
+        Ticket ticket = new Ticket("aa");
         assertFalse(parkingLot.carOut(ticket));
     }
 }
