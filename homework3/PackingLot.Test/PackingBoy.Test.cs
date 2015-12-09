@@ -25,5 +25,25 @@ namespace PackingLot.Test
             var actual = packingBoy.PackingCar("ooo");
             Assert.Null(actual);
         }
+
+        [Fact]
+        public void SucessGetCarWhenCarWasInAnyOfPackingLotTest()
+        {
+            var packingBoy = new PackingBoy(10);
+            var ticket = packingBoy.PackingCar("xxx");
+            var actual = packingBoy.GetCar(ticket);
+
+            Assert.True(actual);
+        }
+
+        [Fact]
+        public void FailedGetCarWhenCarWasInAnyOfPackingLotTest()
+        {
+            var packingBoy = new PackingBoy(10);
+            var ticket = new Ticket("invalid ticket");
+            var actual = packingBoy.GetCar(ticket);
+
+            Assert.False(actual);
+}
     }
 }
