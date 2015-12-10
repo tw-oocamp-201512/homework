@@ -34,50 +34,50 @@ Of cause, to make sure we can run this test, we must add some classes and functi
 
 #####Order.java
 ```java
-	public class Order {
-	    private int distance;
-	    private int time;
-	    private float price;
+    public class Order {
+        private int distance;
+        private int time;
+        private float price;
 
-	    public int getDistance() {
-	        return distance;
-	    }
+        public int getDistance() {
+            return distance;
+        }
 
-	    public void setDistance(int distance) {
-	        this.distance = distance;
-	    }
+        public void setDistance(int distance) {
+            this.distance = distance;
+        }
 
-	    public int getTime() {
-	        return time;
-	    }
+        public int getTime() {
+            return time;
+        }
 
-	    public void setTime(int time) {
-	        this.time = time;
-	    }
+        public void setTime(int time) {
+            this.time = time;
+        }
 
-	    public float getPrice() {
-	        return price;
-	    }
+        public float getPrice() {
+            return price;
+        }
 
-	    public void setPrice(float price) {
-	        this.price = price;
-	    }
-	}
+        public void setPrice(float price) {
+            this.price = price;
+        }
+    }
 ```
 #####TaxiFee.java
 ```java
-	public class TaxiFee {
-    	public void calculate(Order order) {
+    public class TaxiFee {
+        public void calculate(Order order) {
     }
 }
 ```
 Now, let's run this test!
-![Test 1](http://i5.tietuku.com/ab8be76a7ac52ab1.png)
+![Test 1](https://raw.githubusercontent.com/sunjintw/homework/master/homework1/jinsun/screenshot/Screen%20Shot%202015-12-02%20at%208.28.30%20PM.png)
 
 Oh, it failed. Don't worry, just leave it here, we can continiue doing the next thing. we can write the specific test for each detail requirement. For the first one is the start price caculator. By the way, we should refactor the test class to move the order object.
 
 ```java
-	Order order;
+    Order order;
 
     @Before
     public void before(){
@@ -95,50 +95,50 @@ Oh, it failed. Don't worry, just leave it here, we can continiue doing the next 
 And then, write the start price calculator, of cause, write the price calculator interface first.
 
 ```java
-	public interface PriceCal {
-    	void calculate(Order order);
-	}
+    public interface PriceCal {
+        void calculate(Order order);
+    }
 
-	public class StartPriceCal implements PriceCal {
-	    @Override
-	    public void calculate(Order order) {
-	        order.setPrice(order.getPrice() + 6);
-	    }
-	}
+    public class StartPriceCal implements PriceCal {
+        @Override
+        public void calculate(Order order) {
+            order.setPrice(order.getPrice() + 6);
+        }
+    }
 ```
 Now, run the *testStartPrice* test case.
-![Test 2](http://i12.tietuku.com/190fca94242632b9.png)
+![Test 2](https://raw.githubusercontent.com/sunjintw/homework/master/homework1/jinsun/screenshot/Screen%20Shot%202015-12-02%20at%209.06.52%20PM.png)
 
 Yeah~ this one is passed. So, we should doing this for each specific reuqirement as below:
 
 ```java
-	@Test
+    @Test
     public void testMiddlePrice() {
         PriceCal middlePriceCal = new MiddlePriceCal();
         middlePriceCal.calculate(order);
         assertEquals(4.8, order.getPrice());
     }
     public class MiddlePriceCal implements PriceCal {
-	    @Override
-	    public void calculate(Order order) {
-	        double middlePrice = order.getDistance() <= 8 ? (order.getDistance() - 2) * 0.8 : 4.8;
-	        order.setPrice(order.getPrice() + middlePrice);
-    	}
-	}
+        @Override
+        public void calculate(Order order) {
+            double middlePrice = order.getDistance() <= 8 ? (order.getDistance() - 2) * 0.8 : 4.8;
+            order.setPrice(order.getPrice() + middlePrice);
+        }
+    }
 
-	@Test
+    @Test
     public void testExtraPrice() {
         PriceCal extraPriceCal = new ExtraPriceCal();
         extraPriceCal.calculate(order);
         assertEquals(4.8, order.getPrice());
     }
     public class ExtraPriceCal implements PriceCal {
-    	@Override
-	    public void calculate(Order order) {
-	        double extraPrice = order.getDistance() > 8 ? (order.getDistance() - 8) * 1.2 : 0;
-	        order.setPrice(order.getPrice() + extraPrice);
-    	}
-	}
+        @Override
+        public void calculate(Order order) {
+            double extraPrice = order.getDistance() > 8 ? (order.getDistance() - 8) * 1.2 : 0;
+            order.setPrice(order.getPrice() + extraPrice);
+        }
+    }
     
     @Test
     public void testTimePrice() {
@@ -147,16 +147,16 @@ Yeah~ this one is passed. So, we should doing this for each specific reuqirement
         assertEquals(1.25, order.getPrice());
     }
     public class TimePriceCal implements PriceCal {
-	    @Override
-	    public void calculate(Order order) {
-	        order.setPrice(order.getPrice() + order.getTime() * 0.25);
-	    }
-	}
+        @Override
+        public void calculate(Order order) {
+            order.setPrice(order.getPrice() + order.getTime() * 0.25);
+        }
+    }
 ```
 After this, we should upadte the TaxiFee's calculate function.
 
 ```java
-	public class TaxiFee implements PriceCal {
+    public class TaxiFee implements PriceCal {
     @Override
     public void calculate(Order order) {
         PriceCal startPriceCal = new StartPriceCal();
@@ -172,6 +172,6 @@ After this, we should upadte the TaxiFee's calculate function.
 }
 ```
 Last but not least, run all these test cases and check the result.
-![Test 3](http://i5.tietuku.com/3f507de4bb059c1f.png)
+![Test 3](https://raw.githubusercontent.com/sunjintw/homework/master/homework1/jinsun/screenshot/Screen%20Shot%202015-12-02%20at%209.55.10%20PM.png)
 
 *This is my first applacation which is followed the TDD process, I still have a lot of confusion of TDD, but I think more close more clear.*
